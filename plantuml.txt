@@ -10,7 +10,8 @@ class Game {
 }
 
 class Board {
-  
+  -int WIDTH
+  -int HEIGHT
 }
 
 class Chessman {
@@ -23,13 +24,16 @@ enum Color {
   BLACK
 }
 
-Chess *-- "1" Game
-Game *-- "1" Board
-Game *-- "2" Player
+Chess *--> Game
+Game *--> Board
+Game *--> "2" Player
+Game *--> Turn
 
-Player o-- "0..n" Chessman
+Turn o--> Player
 
-Color -* Player
+Player o--> "0..n" Chessman
+
+Color <-* Player
 
 Chessman <|-- Pawn
 Chessman <|-- Knight
@@ -37,4 +41,6 @@ Chessman <|-- Bishop
 Chessman <|-- Rook
 Chessman <|-- Queen
 Chessman <|-- King
+
+Board --> Player
 @enduml

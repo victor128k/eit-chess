@@ -25,5 +25,10 @@ public class ChessCoordinate {
 	public boolean equals(ChessCoordinate coordinate) {
 		return this.row == coordinate.row && this.column == coordinate.column;
 	}
+	
+	public void show() {
+		IO io = new IO();
+		io.writeln("fila: " + this.row + " columna: " + this.column);
+	}
 
 }
