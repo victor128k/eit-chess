@@ -15,7 +15,7 @@ public class Chessman {
 		return Character.toLowerCase(this.letter);
 	}
 
-	public Object getCoordinate() {
+	public ChessCoordinate getCoordinate() {
 		return this.coordinate;
 	}
 
