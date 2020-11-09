@@ -1,0 +1,40 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Chess{
+  -void play()
+}
+
+class Game {
+  +void play()
+}
+
+class Board {
+  
+}
+
+class Chessman {
+  Color color
+  +Coordinate getCoordinate()
+}
+
+enum Color {
+  WHITE
+  BLACK
+}
+
+Chess *-- "1" Game
+Game *-- "1" Board
+Game *-- "2" Player
+
+Player o-- "0..n" Chessman
+
+Color -* Player
+
+Chessman <|-- Pawn
+Chessman <|-- Knight
+Chessman <|-- Bishop
+Chessman <|-- Rook
+Chessman <|-- Queen
+Chessman <|-- King
+@enduml
